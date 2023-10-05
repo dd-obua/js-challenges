@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const calcAverage = scores => {
+const calcAverage = (scores) => {
   return (scores.reduce((acc, cur) => acc + cur) / scores.length).toFixed(0);
 };
 
@@ -9,7 +9,7 @@ const checkWinner = (avgDolphins, avgKoalas) => {
     return `Dolphines win (${avgDolphins} vs. ${avgKoalas}).`;
   else if (avgKoalas >= 2 * avgDolphins)
     return `Koalas win (${avgKoalas} vs. ${avgDolphins}).`;
-  else return 'No team wins.';
+  else return "No team wins.";
 };
 
 // Data 1

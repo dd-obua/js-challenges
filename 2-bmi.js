@@ -12,18 +12,18 @@ const heightJohn2 = 1.76;
 
 const bmiMark = calcBMI(massMark1, heightMark1);
 const bmiJohn = calcBMI(massJohn1, heightJohn1);
-const markHigherBMI = `${bmiMark > bmiJohn ? 'Mark' : 'John'}'s BMI (${
+const markHigherBMI = `${bmiMark > bmiJohn ? "Mark" : "John"}'s BMI (${
   bmiMark > bmiJohn ? bmiMark : bmiJohn
-}) is higher than ${bmiMark > bmiJohn ? 'John' : 'Mark'}'s (${
+}) is higher than ${bmiMark > bmiJohn ? "John" : "Mark"}'s (${
   bmiMark > bmiJohn ? bmiJohn : bmiMark
 }).`;
 console.log(markHigherBMI);
 
 const bmiMark2 = calcBMI(massMark2, heightMark2);
 const bmiJohn2 = calcBMI(massJohn2, heightJohn2);
-const markHigherBMI2 = `${bmiMark2 > bmiJohn2 ? 'Mark' : 'John'}'s BMI (${
+const markHigherBMI2 = `${bmiMark2 > bmiJohn2 ? "Mark" : "John"}'s BMI (${
   bmiMark2 > bmiJohn2 ? bmiMark2 : bmiJohn2
-}) is higher than ${bmiMark2 > bmiJohn2 ? 'John' : 'Mark'}'s (${
+}) is higher than ${bmiMark2 > bmiJohn2 ? "John" : "Mark"}'s (${
   bmiMark2 > bmiJohn2 ? bmiJohn2 : bmiMark2
 }).`;
 console.log(markHigherBMI2);
