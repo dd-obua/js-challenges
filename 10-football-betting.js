@@ -57,3 +57,10 @@ team2 < team1 && console.log(`${game.team2} is more likely to win.`);
 // Challenge 2
 for (const [i, scorer] of game.scored.entries())
   console.log(`Goal ${i + 1}: ${scorer}`);
+
+const oddValues = Object.values(game.odds);
+
+let sum = 0;
+for (const value of oddValues) sum += value;
+const averageOdd = (sum / oddValues.length).toFixed(2);
+console.log(averageOdd);
