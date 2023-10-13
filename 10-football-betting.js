@@ -72,7 +72,7 @@ averageOdd /= oddValues.length;
 console.log(averageOdd.toFixed(2));
 console.log('');
 
-const odds = Object.entries(game.odds);
-for (const [key, value] of odds) {
-  console.log(`Odd of victory ${game[key]}: ${value}`);
+for (const [key, value] of Object.entries(game.odds)) {
+  const teamStr = key === 'x' ? 'draw' : `victory ${game[key]}`;
+  console.log(`Odd of ${teamStr}: ${value}.`);
 }
