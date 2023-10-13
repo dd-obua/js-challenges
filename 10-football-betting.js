@@ -26,23 +26,27 @@ const game = {
 const [players1, players2] = game.players;
 console.log(`${game.team1}:`, players1);
 console.log(`${game.team2}:`, players2);
+console.log('');
 
 const [gk, ...fieldPlayers] = players1;
 console.log('Goal keeper:', gk);
 console.log('Field players:', fieldPlayers);
+console.log('');
 
 const allPlayers = [...players1, ...players2];
 console.log('All players:', allPlayers);
+console.log('');
 
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log('Final players of team 1:', players1Final);
+console.log('');
 
 // prettier-ignore
 const { odds: { team1, x: draw, team2 }} = game;
-
 console.log('Team 1 odd:', team1);
 console.log('Draw odd:', draw);
 console.log('Team 2 odd:', team2);
+console.log('');
 
 const printGoals = (...players) => {
   players.forEach((player) => console.log(player));
@@ -50,23 +54,25 @@ const printGoals = (...players) => {
 };
 printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 printGoals(...game.scored);
+console.log('');
 
 team1 < team2 && console.log(`${game.team1} is more likely to win.`);
 team2 < team1 && console.log(`${game.team2} is more likely to win.`);
+console.log('');
 
 // Challenge 2
 for (const [i, scorer] of game.scored.entries())
   console.log(`Goal ${i + 1}: ${scorer}`);
+console.log('');
 
 const oddValues = Object.values(game.odds);
-
-let sum = 0;
-for (const value of oddValues) sum += value;
-const averageOdd = (sum / oddValues.length).toFixed(2);
-console.log(averageOdd);
+let averageOdd = 0;
+for (const value of oddValues) averageOdd += value;
+averageOdd /= oddValues.length;
+console.log(averageOdd.toFixed(2));
+console.log('');
 
 const odds = Object.entries(game.odds);
-console.log(odds);
 for (const [key, value] of odds) {
   console.log(`Odd of victory ${game[key]}: ${value}`);
 }
