@@ -64,3 +64,9 @@ let sum = 0;
 for (const value of oddValues) sum += value;
 const averageOdd = (sum / oddValues.length).toFixed(2);
 console.log(averageOdd);
+
+const odds = Object.entries(game.odds);
+console.log(odds);
+for (const [key, value] of odds) {
+  console.log(`Odd of victory ${game[key]}: ${value}`);
+}
