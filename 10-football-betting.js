@@ -97,3 +97,5 @@ console.log(gameEvents);
 const events = [...new Set(gameEvents.values())];
 console.log('Events', events);
 
+gameEvents.delete(64);
+console.log(gameEvents);
