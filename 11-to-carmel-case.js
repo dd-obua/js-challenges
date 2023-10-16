@@ -22,3 +22,5 @@ const covertCase = () => {
     console.log(`${finalVar.padEnd(20)} ${'✅'.repeat(i + 1)}`);
   }
 };
+
+convertBtn.addEventListener('click', covertCase);
