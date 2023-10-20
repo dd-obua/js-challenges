@@ -23,7 +23,19 @@ console.log('');
 const juli2 = [9, 16, 6, 8, 3];
 const kate2 = [10, 5, 6, 1, 4];
 checkDogs(juli2, kate2);
+console.log('');
 
-// Dog number 1 is
-// an adult, and is 5 years old
-// still a puppy 🐶
+// Dog ages to human ages
+const calcAverageHumanAge = (ages) => {
+  const humanAges = ages.map((dog) => (dog <= 2 ? 2 * dog : 16 + dog * 4));
+  const adults = humanAges.filter((age) => age >= 18);
+  return adults.reduce((acc, cur) => acc + cur) / adults.length;
+};
+
+const dogAges1 = [5, 2, 4, 1, 15, 8, 3];
+const dogAges2 = [16, 6, 10, 5, 6, 1, 4];
+
+const avg1 = calcAverageHumanAge(dogAges1);
+const avg2 = calcAverageHumanAge(dogAges2);
+console.log('Average 1:', avg1);
+console.log('Average 2:', avg2);
