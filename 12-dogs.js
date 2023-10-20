@@ -1,7 +1,12 @@
 'use strict';
 
 const checkDogs = (dogsJuli, dogsKate) => {
-  const correctDogsJuli = dogsJuli.slice(2);
+  const correctDogsJuli = dogsJuli.slice();
+
+  // Mutate correctDogsJuli
+  correctDogsJuli.splice(0, 1);
+  correctDogsJuli.splice(-2);
+
   const dogs = [...correctDogsJuli, ...dogsKate];
   dogs.forEach((dog, i) => {
     const str =
