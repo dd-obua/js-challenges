@@ -11,3 +11,12 @@ const dogs = [
 dogs.forEach(
   (dog) => (dog.recommendedFood = (dog.weight ** 0.75 * 28).toFixed(2))
 );
+
+// 2.
+const eatingRate = (curFood, recommendedFood) => {
+  let rate;
+  if (curFood < recommendedFood * 0.9) rate = 'too little';
+  else if (curFood > recommendedFood * 1.1) rate = 'too much';
+  else rate = 'okay';
+  return rate;
+};
