@@ -67,9 +67,5 @@ console.log('Dogs eating okay:', dogsEatingOkay);
 // 8. Sort dog objects based on quantity of recommeneded food
 const sortedDogs = dogs
   .slice()
-  .map((dog) => ({
-    ...dog,
-    recommendedFood: Number(dog.recommendedFood),
-  }))
   .sort((a, b) => a.recommendedFood - b.recommendedFood);
 console.log(sortedDogs);
