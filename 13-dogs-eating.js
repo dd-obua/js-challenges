@@ -63,3 +63,13 @@ const dogsEatingOkay = dogs.filter((dog) =>
   okay(dog.curFood, dog.recommendedFood)
 );
 console.log('Dogs eating okay:', dogsEatingOkay);
+
+// 8.
+const sortedDogs = dogs
+  .slice()
+  .map((dog) => ({
+    ...dog,
+    recommendedFood: Number(dog.recommendedFood),
+  }))
+  .sort((a, b) => a.recommendedFood - b.recommendedFood);
+console.log(sortedDogs);
