@@ -20,3 +20,11 @@ const eatingRate = (curFood, recommendedFood) => {
   else rate = 'okay';
   return rate;
 };
+
+const dogSarah = dogs.find((dog) => dog.owners.includes('Sarah'));
+console.log(
+  `Sarah's dog is eating ${eatingRate(
+    dogSarah.curFood,
+    dogSarah.recommendedFood
+  )}.`
+);
