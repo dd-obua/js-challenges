@@ -55,5 +55,5 @@ const eatingExactly = dogs.some((dog) => dog.curFood === dog.recommendedFood);
 console.log('Eating exactly:', eatingExactly);
 
 // 6.
-const eatingOkay = dogs.some((dog) => okay(dog.current, dog.recommendedFood));
+const eatingOkay = dogs.some((dog) => okay(dog.curFood, dog.recommendedFood));
 console.log('Eating okay:', eatingOkay);
