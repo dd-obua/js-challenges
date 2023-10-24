@@ -13,10 +13,10 @@ dogs.forEach(
 );
 
 // 2.
-const eatingRate = (curFood, recommendedFood) => {
+const eatingRate = (current, recommended) => {
   let rate;
-  if (curFood < recommendedFood * 0.9) rate = 'too little';
-  else if (curFood > recommendedFood * 1.1) rate = 'too much';
+  if (current < recommended * 0.9) rate = 'too little';
+  else if (current > recommended * 1.1) rate = 'too much';
   else rate = 'okay';
   return rate;
 };
