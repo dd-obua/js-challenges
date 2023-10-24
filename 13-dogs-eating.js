@@ -57,3 +57,9 @@ console.log('Eating exactly:', eatingExactly);
 // 6.
 const eatingOkay = dogs.some((dog) => okay(dog.curFood, dog.recommendedFood));
 console.log('Eating okay:', eatingOkay);
+
+// 7.
+const dogsEatingOkay = dogs.filter((dog) =>
+  okay(dog.curFood, dog.recommendedFood)
+);
+console.log('Dogs eating okay:', dogsEatingOkay);
