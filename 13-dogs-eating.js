@@ -13,19 +13,19 @@ dogs.forEach(
 );
 
 // 2.
-const eatingRate = (current, recommended) => {
-  let rate;
-  if (current < recommended * 0.9) rate = 'too little';
-  else if (current > recommended * 1.1) rate = 'too much';
-  else rate = 'okay';
-  return rate;
-};
-
 const okay = (current, recommended) => {
   return current >= recommended * 0.9 && current <= recommended * 1.1;
 };
 const tooLittle = (current, recommended) => current < recommended * 0.9;
 const tooMuch = (current, recommended) => current > recommended * 1.1;
+
+const eatingRate = (current, recommended) => {
+  let rate;
+  if (tooLittle(current, recommended)) rate = 'too little';
+  else if (tooMuch(current, recommended)) rate = 'too much';
+  else rate = 'okay';
+  return rate;
+};
 
 const dogSarah = dogs.find((dog) => dog.owners.includes('Sarah'));
 console.log(
