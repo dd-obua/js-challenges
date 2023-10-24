@@ -9,7 +9,7 @@ const dogs = [
 
 // 1. Add recommendedFood property
 dogs.forEach(
-  (dog) => (dog.recommendedFood = (dog.weight ** 0.75 * 28).toFixed(2))
+  (dog) => (dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28))
 );
 
 // 2. Determine how Sarah's dog is eating
@@ -21,8 +21,8 @@ const tooMuch = (current, recommended) => current > recommended * 1.1;
 
 const eatingRate = (current, recommended) => {
   let rate;
-  if (tooLittle(current, recommended)) rate = 'too little';
-  else if (tooMuch(current, recommended)) rate = 'too much';
+  if (current < recommended * 0.9) rate = 'too little';
+  else if (current > recommended * 1.1) rate = 'too much';
   else rate = 'okay';
   return rate;
 };
