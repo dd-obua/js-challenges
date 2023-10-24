@@ -21,6 +21,12 @@ const eatingRate = (curFood, recommendedFood) => {
   return rate;
 };
 
+const okay = (current, recommended) => {
+  return current >= recommended * 0.9 && current <= recommended * 1.1;
+};
+const tooLittle = (current, recommended) => current < recommended * 0.9;
+const tooMuch = (current, recommended) => current > recommended * 1.1;
+
 const dogSarah = dogs.find((dog) => dog.owners.includes('Sarah'));
 console.log(
   `Sarah's dog is eating ${eatingRate(
@@ -49,9 +55,5 @@ const eatingExactly = dogs.some((dog) => dog.curFood === dog.recommendedFood);
 console.log('Eating exactly:', eatingExactly);
 
 // 6.
-const eatingOkay = dogs.some(
-  (dog) =>
-    dog.curFood >= dog.recommendedFood * 0.9 &&
-    dog.curFood <= dog.recommendedFood * 1.1
-);
+const eatingOkay = dogs.some((dog) => okay(dog.current, dog.recommendedFood));
 console.log('Eating okay:', eatingOkay);
