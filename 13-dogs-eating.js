@@ -7,12 +7,12 @@ const dogs = [
   { weight: 32, curFood: 340, owners: ['Michael'] },
 ];
 
-// 1.
+// 1. Add recommendedFood property
 dogs.forEach(
   (dog) => (dog.recommendedFood = (dog.weight ** 0.75 * 28).toFixed(2))
 );
 
-// 2.
+// 2. Determine how Sarah's dog is eating
 const okay = (current, recommended) => {
   return current >= recommended * 0.9 && current <= recommended * 1.1;
 };
@@ -35,7 +35,7 @@ console.log(
   )}.`
 );
 
-// 3.
+// 3. Determine owners of dogs eating too much and those eating too little
 const ownersEatTooMuch = dogs
   .filter((dog) => dog.curFood > dog.recommendedFood * 1.1)
   .flatMap((dog) => dog.owners);
@@ -46,25 +46,25 @@ const ownersEatTooLittle = dogs
   .flatMap((dog) => dog.owners);
 console.log('Owners whose dogs eat too little:', ownersEatTooLittle);
 
-// 4.
+// 4. Log to the console owners whose dogs are eating too much and those with dogs eating too little
 console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
 console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
 
-// 5.
+// 5. Determine dogs eating exactly as recommended
 const eatingExactly = dogs.some((dog) => dog.curFood === dog.recommendedFood);
 console.log('Eating exactly:', eatingExactly);
 
-// 6.
+// 6. Check if some dogs are eating okay
 const eatingOkay = dogs.some((dog) => okay(dog.curFood, dog.recommendedFood));
 console.log('Eating okay:', eatingOkay);
 
-// 7.
+// 7. Determine the dogs eating okay
 const dogsEatingOkay = dogs.filter((dog) =>
   okay(dog.curFood, dog.recommendedFood)
 );
 console.log('Dogs eating okay:', dogsEatingOkay);
 
-// 8.
+// 8. Sort dog objects based on quantity of recommeneded food
 const sortedDogs = dogs
   .slice()
   .map((dog) => ({
