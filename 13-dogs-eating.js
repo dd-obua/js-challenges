@@ -45,9 +45,5 @@ console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
 console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
 
 // 5.
-const eatingOkay = dogs.some(
-  (dog) =>
-    dog.curFood >= dog.recommendedFood * 0.9 &&
-    dog.curFood <= dog.recommendedFood * 1.1
-);
-console.log('Eating okay:', eatingOkay);
+const eatingExactly = dogs.some((dog) => dog.curFood === dog.recommendedFood);
+console.log('Eating exactly:', eatingExactly);
