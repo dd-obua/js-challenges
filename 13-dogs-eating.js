@@ -28,3 +28,9 @@ console.log(
     dogSarah.recommendedFood
   )}.`
 );
+
+// 3.
+const ownersEatTooMuch = dogs
+  .filter((dog) => dog.curFood > dog.recommendedFood * 1.1)
+  .flatMap((dog) => dog.owners);
+console.log('Owners whose dogs eat too much:', ownersEatTooMuch);
